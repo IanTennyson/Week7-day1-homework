@@ -15,7 +15,7 @@ public class MovieTest {
 
     @Before
     public void before(){
-        movie1 = new Movie("The Godfather", "Thriller", 1.0);
+        movie1 = new Movie("The Godfather", "Thriller", 1);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class MovieTest {
 
     @Test
     public void testCanGetCurrentRating(){
-        assertEquals(1.0, movie1.getRating());
+        assertEquals(1, movie1.getRating());
     }
 
     @Test
@@ -47,14 +47,14 @@ public class MovieTest {
 
     @Test
     public void testSetFilmRating(){
-        movie1.setFilmRating(2.0);
-        assertEquals(2.0, movie1.getRating());
+        movie1.setFilmRating(2);
+        assertEquals(2, movie1.getRating());
     }
 
     @Test
     public void testReturnAllMovieDetails(){
         movie1.setTitle("Logan");
-        assertEquals("Title: Logan Genre: Thriller Rating: 1.0", movie1.getAllDetails());
+        assertEquals("Title: Logan Genre: Thriller Rating: 1", movie1.getAllDetails());
     }
 
 }

@@ -1,5 +1,8 @@
 package example.codeclan.com.toptenmovies;
 
+
+import java.util.Arrays;
+import java.util.List;
 /**
  * Created by user on 17/04/2017.
  */
@@ -12,20 +15,22 @@ public class Ranking {
     }
 
     public void addMovie(Movie movie){
-        int titlesInArray = titlesInArray();
-        this.rankings[titlesInArray] = movie;
-
+        int index = movie.getRating() - 1;
+        this.rankings[index] = movie;
     }
 
-    public int titlesInArray(){
-        int count = 0;
-        for(Movie movie : this.rankings){
-            if(movie != null){
-                count++;
+    public Movie getMovieByRank(int rating) {
+        return this.rankings[rating - 1];
+    }
+
+    public Movie getMovieByTitle(String title) {
+        for(Movie x : rankings){
+            if(x.getTitle() == title){
+                return x;
             }
-        }
-        return count;
-    }
 
+        }
+        return null;
+    }
 
 }
